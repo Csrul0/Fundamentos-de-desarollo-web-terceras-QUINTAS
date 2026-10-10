@@ -1,4 +1,5 @@
 # SoundBazaarBytes
+ESTE ES UN PROYECTO PIA DE MATERIA FUDAMENTOS DE DESAROLLO WEB TERCERAS & QUINTAS
 
 Tienda de música hecha con Django (proyecto PIA). El diseño parte de la plantilla Tailstore (Tailwind CSS, licencia MIT).
 
