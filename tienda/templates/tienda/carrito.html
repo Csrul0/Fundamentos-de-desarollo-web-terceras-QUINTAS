@@ -1,0 +1,41 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Carrito" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">{% translate "Tu carrito" %}</h1>
+    {% if carrito_lineas %}
+    <div class="space-y-4 mb-8">
+        {% for l in carrito_lineas %}
+        <div class="flex flex-wrap items-center justify-between gap-4 bg-white p-4 rounded-lg shadow">
+            <div class="flex items-center gap-4">
+                <img src="{{ l.producto.imagen_url }}" alt="" class="h-20 w-20 object-cover rounded">
+                <div>
+                    <a href="{% url 'producto' l.producto.slug %}" class="font-semibold">{% traducido l.producto 'nombre' %}</a>
+                    <p class="text-gray-txt">{% precio l.producto.precio %} {% translate "c/u" %}</p>
+                </div>
+            </div>
+            <div class="flex items-center border border-gray-300 rounded-full">
+                <a href="{% url 'cambiar' l.producto.id l.cantidad|add:'-1' %}" class="px-4 py-2" aria-label="{% translate 'Menos' %}">-</a>
+                <span class="w-8 text-center">{{ l.cantidad }}</span>
+                <a href="{% url 'cambiar' l.producto.id l.cantidad|add:'1' %}" class="px-4 py-2" aria-label="{% translate 'Más' %}">+</a>
+            </div>
+            <p class="font-bold w-28 text-right">{% precio l.subtotal %}</p>
+            <a href="{% url 'quitar' l.producto.id %}" class="text-primary font-semibold">{% translate "Quitar" %}</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="flex flex-wrap justify-between items-center gap-4">
+        <p class="text-2xl font-bold">{% translate "Total:" %} <span class="text-primary">{% precio carrito_total %}</span></p>
+        <div class="flex gap-3">
+            <a href="{% url 'catalogo' %}" class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-2 rounded-full">{% translate "Seguir comprando" %}</a>
+            <a href="{% url 'checkout' %}" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full">{% translate "Ir a pagar" %}</a>
+        </div>
+    </div>
+    {% if moneda_actual != 'MXN' %}<p class="text-sm text-gray-txt mt-4">{% translate "Los precios se registran en pesos mexicanos (MXN). La conversión es solo de referencia." %}</p>{% endif %}
+    {% else %}
+    <p class="mb-4">{% translate "Tu carrito está vacío." %}</p>
+    <a href="{% url 'catalogo' %}" class="bg-primary text-white font-semibold px-6 py-2 rounded-full inline-block">{% translate "Ver el catálogo" %}</a>
+    {% endif %}
+</div>
+{% endblock %}

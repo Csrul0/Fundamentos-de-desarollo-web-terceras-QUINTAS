@@ -1,0 +1,45 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Contacto" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-12 max-w-5xl">
+    <h1 class="text-3xl font-bold mb-2">{% translate "Contacto" %}</h1>
+    <p class="mb-8 text-gray-txt">{% translate "Escríbenos, llámanos o pásate por la tienda. Respondemos en menos de un día hábil." %}</p>
+    <div class="flex flex-wrap gap-8">
+        <aside class="w-full md:w-80 bg-gray-lighter rounded-lg p-6 h-fit space-y-5">
+            <div>
+                <p class="font-bold mb-1"><i class="fas fa-location-dot text-primary mr-2"></i>{% translate "Dirección" %}</p>
+                <p>Calle Ejemplo 123, Col. Centro<br>Nuevo León, México</p>
+            </div>
+            <div>
+                <p class="font-bold mb-1"><i class="fas fa-phone text-primary mr-2"></i>{% translate "Teléfono" %}</p>
+                <p>81 0000 0000</p>
+            </div>
+            <div>
+                <p class="font-bold mb-1"><i class="fas fa-envelope text-primary mr-2"></i>{% translate "Correo" %}</p>
+                <p>contacto@soundbazaarbytes.local</p>
+            </div>
+            <div>
+                <p class="font-bold mb-1"><i class="fas fa-clock text-primary mr-2"></i>{% translate "Horario" %}</p>
+                <p>{% translate "Lunes a sábado, de 10:00 a 18:00" %}</p>
+            </div>
+            <div class="flex gap-4 text-xl">
+                <a href="#" aria-label="Facebook" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp" class="hover:text-primary"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </aside>
+        <form method="post" class="flex-1 min-w-[280px] space-y-4">{% csrf_token %}
+            <h2 class="text-xl font-bold">{% translate "Envíanos un mensaje" %}</h2>
+            {% for campo in form %}
+            <div>
+                <label for="{{ campo.id_for_label }}" class="block font-semibold mb-1">{{ campo.label }}</label>
+                {{ campo }}
+                {% for e in campo.errors %}<p class="text-red-600 text-sm">{{ e }}</p>{% endfor %}
+            </div>
+            {% endfor %}
+            <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full">{% translate "Enviar mensaje" %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

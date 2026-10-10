@@ -1,0 +1,20 @@
+{% load i18n tienda_extras %}
+<div class="tarjeta-anim w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+  <div class="bg-white p-3 rounded-lg shadow-lg h-full flex flex-col">
+    <a href="{% url 'producto' p.slug %}"><img src="{{ p.imagen_url }}" alt="{% traducido p 'nombre' %}" class="w-full object-cover mb-4 rounded-lg aspect-square"></a>
+    <a href="{% url 'producto' p.slug %}" class="text-lg font-semibold mb-2">{% traducido p 'nombre' %}</a>
+    <p class="my-2 text-gray-txt">{% traducido p.categoria 'nombre' %}</p>
+    <div class="flex items-center mb-4 mt-auto">
+      <span class="text-lg font-bold text-primary">{% precio p.precio %}</span>
+      {% if p.precio_anterior %}<span class="text-sm line-through ml-2">{% precio p.precio_anterior %}</span>{% endif %}
+    </div>
+    {% if p.stock %}
+    <form method="post" action="{% url 'agregar' p.id %}">{% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">{% translate "Agregar al carrito" %}</button>
+    </form>
+    {% else %}
+    <p class="text-center font-semibold text-gray-txt py-2">{% translate "Agotado" %}</p>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Quiénes somos" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+    <h1 class="text-3xl font-bold mb-6">{% translate "Quiénes somos" %}</h1>
+    <p class="mb-4">{% translate "SoundBazaarBytes es una tienda de música pensada para quien quiere empezar a tocar y para quien ya lleva años en el escenario. Vendemos guitarras, teclados, percusión, equipo de audio, vinilos y los accesorios que siempre hacen falta. También ajustamos y damos mantenimiento a tu instrumento en nuestro taller." %}</p>
+    <p class="mb-10">{% translate "Elegimos cada producto porque suena bien y cuesta lo justo. Si no sabes cuál instrumento te conviene, escríbenos o agenda una cita y te ayudamos a decidir." %}</p>
+
+    <div class="flex flex-wrap -mx-4">
+        <section class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-gray-lighter rounded-lg p-6 h-full">
+                <h2 class="text-xl font-bold mb-3">{% translate "Misión" %}</h2>
+                <p>{% translate "Acercar la música a todas las personas con instrumentos de calidad a precios justos, y acompañarlas con un servicio de ajuste y asesoría que las ayude a tocar mejor cada día." %}</p>
+            </div>
+        </section>
+        <section class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-gray-lighter rounded-lg p-6 h-full">
+                <h2 class="text-xl font-bold mb-3">{% translate "Visión" %}</h2>
+                <p>{% translate "Ser la tienda de música de referencia en Nuevo León, reconocida por su trato cercano, su taller de confianza y por formar a nuevas generaciones de músicos." %}</p>
+            </div>
+        </section>
+    </div>
+
+    <h2 class="text-xl font-bold mb-4">{% translate "Lo que nos importa" %}</h2>
+    <ul class="list-disc pl-6 space-y-2 mb-8">
+        <li>{% translate "Recomendar lo que realmente te sirve, no lo más caro." %}</li>
+        <li>{% translate "Explicar con claridad, sin tecnicismos innecesarios." %}</li>
+        <li>{% translate "Cuidar cada instrumento como si fuera nuestro." %}</li>
+    </ul>
+
+    <a href="{% url 'contacto' %}" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full inline-block">{% translate "Escríbenos" %}</a>
+    <a href="{% url 'servicios' %}" class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-2 rounded-full inline-block ml-2">{% translate "Agendar una cita" %}</a>
+</div>
+{% endblock %}

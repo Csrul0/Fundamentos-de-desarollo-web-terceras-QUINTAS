@@ -1,0 +1,36 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Servicios y citas" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-2">{% translate "Servicios y citas" %}</h1>
+    <p class="mb-8 text-gray-txt">{% translate "Trae tu instrumento y lo dejamos listo para tocar. Atendemos de lunes a sábado, de 10:00 a 18:00." %}</p>
+    <div class="flex flex-wrap gap-8">
+        <div class="flex-1 min-w-[280px] space-y-4">
+            {% for s in servicios %}
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <div class="flex justify-between items-start gap-4">
+                    <h2 class="text-lg font-semibold">{% traducido s 'nombre' %}</h2>
+                    <span class="font-bold text-primary whitespace-nowrap">{% if s.precio %}{% precio s.precio %}{% else %}{% translate "Gratis" %}{% endif %}</span>
+                </div>
+                <p class="text-gray-txt my-2">{% traducido s 'descripcion' %}</p>
+                <p class="text-sm">{% blocktranslate with m=s.duracion_min %}Dura unos {{ m }} minutos.{% endblocktranslate %}</p>
+            </div>
+            {% empty %}
+            <p>{% translate "Todavía no hay servicios. Corre" %} <code>python manage.py cargar_productos</code>.</p>
+            {% endfor %}
+        </div>
+        <form method="post" id="agendar" class="w-full md:w-[420px] bg-gray-lighter rounded-lg p-6 space-y-4 h-fit">{% csrf_token %}
+            <h2 class="text-xl font-bold">{% translate "Agenda tu cita" %}</h2>
+            {% for campo in form %}
+            <div>
+                <label for="{{ campo.id_for_label }}" class="block font-semibold mb-1">{{ campo.label }}</label>
+                {{ campo }}
+                {% for e in campo.errors %}<p class="text-red-600 text-sm">{{ e }}</p>{% endfor %}
+            </div>
+            {% endfor %}
+            <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full w-full">{% translate "Agendar cita" %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

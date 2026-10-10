@@ -1,0 +1,18 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% traducido n 'titulo' %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+    <p class="mb-6 text-gray-txt"><a href="{% url 'noticias' %}" class="hover:text-primary">{% translate "Noticias" %}</a> / {% traducido n 'titulo' %}</p>
+    <h1 class="text-3xl font-bold mb-2">{% traducido n 'titulo' %}</h1>
+    <p class="text-gray-txt mb-6">{{ n.fecha|date:"DATE_FORMAT" }}</p>
+    <img src="{{ n.imagen_url }}" alt="{% traducido n 'titulo' %}" class="w-full rounded-lg shadow-lg mb-8">
+    {% traducido n 'contenido' as texto %}<div class="space-y-4 leading-relaxed">{{ texto|linebreaks }}</div>
+    {% if otras %}
+    <h2 class="text-xl font-bold mt-12 mb-4">{% translate "Más noticias" %}</h2>
+    <ul class="space-y-2">
+        {% for o in otras %}<li><a href="{% url 'noticia' o.slug %}" class="text-primary font-semibold">{% traducido o 'titulo' %}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

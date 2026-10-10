@@ -1,0 +1,19 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Crear cuenta" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-12 max-w-md">
+    <h1 class="text-3xl font-bold mb-6">{% translate "Crear cuenta" %}</h1>
+    <form method="post" class="space-y-4">{% csrf_token %}
+        {% for campo in form %}
+        <div>
+            <label for="{{ campo.id_for_label }}" class="block font-semibold mb-1">{{ campo.label }}</label>
+            {{ campo }}
+            {% for e in campo.errors %}<p class="text-red-600 text-sm">{{ e }}</p>{% endfor %}
+        </div>
+        {% endfor %}
+        <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full w-full">{% translate "Crear cuenta" %}</button>
+    </form>
+    <p class="mt-4">{% translate "¿Ya tienes cuenta?" %} <a href="{% url 'login' %}" class="text-primary font-semibold">{% translate "Entra aquí" %}</a></p>
+</div>
+{% endblock %}

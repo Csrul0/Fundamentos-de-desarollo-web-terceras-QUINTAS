@@ -1,0 +1,25 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Catálogo" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">{% translate "Catálogo" %}</h1>
+    <form method="get" class="flex flex-wrap gap-3 mb-8">
+        <input type="text" name="q" value="{{ q }}" placeholder="{% translate 'Buscar por nombre o marca' %}" class="p-2 border border-gray-300 rounded flex-1 min-w-[200px]">
+        <select name="categoria" class="p-2 border border-gray-300 rounded">
+            <option value="">{% translate "Todas las categorías" %}</option>
+            {% for c in menu_categorias %}<option value="{{ c.slug }}" {% if c.slug == categoria_actual %}selected{% endif %}>{% traducido c 'nombre' %}</option>{% endfor %}
+        </select>
+        <select name="orden" class="p-2 border border-gray-300 rounded">
+            <option value="">{% translate "Más recientes" %}</option>
+            <option value="precio" {% if orden == 'precio' %}selected{% endif %}>{% translate "Precio: menor a mayor" %}</option>
+            <option value="-precio" {% if orden == '-precio' %}selected{% endif %}>{% translate "Precio: mayor a menor" %}</option>
+        </select>
+        <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full">{% translate "Filtrar" %}</button>
+    </form>
+    <div class="flex flex-wrap -mx-4">
+        {% for p in productos %}{% include 'tienda/_tarjeta.html' %}
+        {% empty %}<p class="px-4">{% translate "No encontramos productos con esos filtros." %} <a href="{% url 'catalogo' %}" class="text-primary font-semibold">{% translate "Ver todo" %}</a></p>{% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Pedido recibido" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-16 text-center">
+    <h1 class="text-3xl font-bold mb-4">{% blocktranslate with n=pedido.nombre %}Gracias por tu compra, {{ n }}{% endblocktranslate %}</h1>
+    {% precio pedido.total as total_txt %}<p class="mb-2">{% blocktranslate with id=pedido.id t=total_txt %}Tu pedido #{{ id }} por <strong>{{ t }}</strong> quedó registrado.{% endblocktranslate %}</p>
+    <p class="mb-8 text-gray-txt">{% blocktranslate with c=pedido.correo %}Te avisaremos a {{ c }}.{% endblocktranslate %}</p>
+    <a href="{% url 'catalogo' %}" class="bg-primary text-white font-semibold px-6 py-2 rounded-full inline-block">{% translate "Volver al catálogo" %}</a>
+</div>
+{% endblock %}

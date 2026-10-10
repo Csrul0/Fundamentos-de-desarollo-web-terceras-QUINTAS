@@ -1,0 +1,35 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% traducido p 'nombre' %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-8">
+    <p class="mb-6 text-gray-txt"><a href="{% url 'catalogo' %}" class="hover:text-primary">{% translate "Catálogo" %}</a> / <a href="{% url 'catalogo' %}?categoria={{ p.categoria.slug }}" class="hover:text-primary">{% traducido p.categoria 'nombre' %}</a></p>
+    <div class="flex flex-wrap -mx-4">
+        <div class="w-full md:w-1/2 px-4 mb-8"><img src="{{ p.imagen_url }}" alt="{% traducido p 'nombre' %}" class="w-full rounded-lg shadow-lg"></div>
+        <div class="w-full md:w-1/2 px-4 mb-8">
+            <h1 class="text-3xl font-bold mb-2">{% traducido p 'nombre' %}</h1>
+            {% if p.marca %}<p class="text-gray-txt mb-4">{% translate "Marca:" %} {{ p.marca }}</p>{% endif %}
+            <div class="flex items-center mb-6">
+                <span class="text-3xl font-bold text-primary">{% precio p.precio %}</span>
+                {% if p.precio_anterior %}<span class="text-lg line-through ml-3">{% precio p.precio_anterior %}</span>{% endif %}
+            </div>
+            <p class="mb-6">{% traducido p 'descripcion' %}</p>
+            {% if p.stock %}
+            <p class="mb-4 text-gray-txt">{% blocktranslate with n=p.stock %}{{ n }} disponibles{% endblocktranslate %}</p>
+            <form method="post" action="{% url 'agregar' p.id %}" class="flex items-center gap-4">{% csrf_token %}
+                <div class="flex items-center border border-gray-300 rounded-full">
+                    <button type="button" id="decrease" class="px-4 py-2" disabled>-</button>
+                    <input id="quantity" name="cantidad" value="1" readonly class="w-10 text-center">
+                    <button type="button" id="increase" class="px-4 py-2">+</button>
+                </div>
+                <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full">{% translate "Agregar al carrito" %}</button>
+            </form>
+            {% else %}<p class="font-semibold">{% translate "Agotado por ahora." %}</p>{% endif %}
+        </div>
+    </div>
+    {% if relacionados %}
+    {% traducido p.categoria 'nombre' as catnom %}<h2 class="text-2xl font-bold mb-8 mt-8">{% blocktranslate with c=catnom %}Más de {{ c }}{% endblocktranslate %}</h2>
+    <div class="flex flex-wrap -mx-4">{% for p in relacionados %}{% include 'tienda/_tarjeta.html' %}{% endfor %}</div>
+    {% endif %}
+</div>
+{% endblock %}

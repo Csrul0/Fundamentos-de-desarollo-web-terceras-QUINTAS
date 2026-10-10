@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Entrar" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-12 max-w-md">
+    <h1 class="text-3xl font-bold mb-6">{% translate "Entrar" %}</h1>
+    <form method="post" class="space-y-4">{% csrf_token %}
+        {% if form.errors %}<p class="text-red-600">{% translate "Usuario o contraseña incorrectos." %}</p>{% endif %}
+        <div><label for="id_username" class="block font-semibold mb-1">{% translate "Usuario" %}</label>
+            <input type="text" name="username" id="id_username" required class="w-full p-2 border border-gray-300 rounded"></div>
+        <div><label for="id_password" class="block font-semibold mb-1">{% translate "Contraseña" %}</label>
+            <input type="password" name="password" id="id_password" required class="w-full p-2 border border-gray-300 rounded"></div>
+        <button class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-6 py-2 rounded-full w-full">{% translate "Entrar" %}</button>
+    </form>
+    <p class="mt-4">{% translate "¿No tienes cuenta?" %} <a href="{% url 'registro' %}" class="text-primary font-semibold">{% translate "Regístrate" %}</a></p>
+</div>
+{% endblock %}

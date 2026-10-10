@@ -1,0 +1,10 @@
+{% extends 'tienda/base.html' %}
+{% load i18n tienda_extras %}
+{% block titulo %}{% translate "Página no encontrada" %}{% endblock %}
+{% block contenido %}
+<div class="container mx-auto px-4 py-20 text-center">
+    <h1 class="text-6xl font-bold text-primary mb-4">404</h1>
+    <p class="mb-8">{% translate "Esta página no existe o se movió." %}</p>
+    <a href="{% url 'inicio' %}" class="bg-primary text-white font-semibold px-6 py-2 rounded-full inline-block">{% translate "Volver al inicio" %}</a>
+</div>
+{% endblock %}
