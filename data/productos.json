@@ -1,0 +1,319 @@
+{
+  "categorias": [
+    {
+      "nombre": "Guitarras",
+      "slug": "guitarras",
+      "nombre_en": "Guitars"
+    },
+    {
+      "nombre": "Teclados",
+      "slug": "teclados",
+      "nombre_en": "Keyboards"
+    },
+    {
+      "nombre": "Batería y percusión",
+      "slug": "bateria-percusion",
+      "nombre_en": "Drums and percussion"
+    },
+    {
+      "nombre": "Audio",
+      "slug": "audio",
+      "nombre_en": "Audio"
+    },
+    {
+      "nombre": "Vinilos",
+      "slug": "vinilos",
+      "nombre_en": "Vinyl records"
+    },
+    {
+      "nombre": "Accesorios",
+      "slug": "accesorios",
+      "nombre_en": "Accessories"
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "Guitarra acústica Yamaha F310",
+      "slug": "yamaha-f310",
+      "categoria": "guitarras",
+      "marca": "Yamaha",
+      "descripcion": "Guitarra acústica de cuerdas de acero con tapa de abeto y cuerpo de meranti. Buen sonido para empezar y tocar en casa.",
+      "precio": 3899,
+      "precio_anterior": 4299,
+      "stock": 8,
+      "destacado": true,
+      "nombre_en": "Yamaha F310 acoustic guitar",
+      "descripcion_en": "Steel-string acoustic guitar with a spruce top and meranti body. A great-sounding choice to start and play at home."
+    },
+    {
+      "nombre": "Guitarra eléctrica Squier Stratocaster",
+      "slug": "squier-stratocaster",
+      "categoria": "guitarras",
+      "marca": "Squier",
+      "descripcion": "Tres pastillas single coil, mástil de maple y puente tremolo. Versátil para rock, blues y pop.",
+      "precio": 6499,
+      "precio_anterior": null,
+      "stock": 5,
+      "destacado": true,
+      "nombre_en": "Squier Stratocaster electric guitar",
+      "descripcion_en": "Three single-coil pickups, maple neck and tremolo bridge. Versatile for rock, blues and pop.",
+      "imagen": "316EmWDalaL.webp"
+    },
+    {
+      "nombre": "Guitarra clásica Cordoba C5",
+      "slug": "cordoba-c5",
+      "categoria": "guitarras",
+      "marca": "Cordoba",
+      "descripcion": "Cuerdas de nylon, tapa de cedro y sonido cálido. Ideal para estudiar música clásica y flamenco.",
+      "precio": 5199,
+      "precio_anterior": 5799,
+      "stock": 4,
+      "destacado": false,
+      "nombre_en": "Cordoba C5 classical guitar",
+      "descripcion_en": "Nylon strings, cedar top and a warm sound. Ideal for studying classical and flamenco music."
+    },
+    {
+      "nombre": "Teclado Casio CT-S300",
+      "slug": "casio-cts300",
+      "categoria": "teclados",
+      "marca": "Casio",
+      "descripcion": "Teclado portátil de 61 teclas con 400 tonos y 77 ritmos. Funciona con pilas o con corriente.",
+      "precio": 3299,
+      "precio_anterior": 3699,
+      "stock": 10,
+      "destacado": true,
+      "nombre_en": "Casio CT-S300 keyboard",
+      "descripcion_en": "Portable 61-key keyboard with 400 tones and 77 rhythms. Runs on batteries or mains power."
+    },
+    {
+      "nombre": "Piano digital Yamaha P-45",
+      "slug": "yamaha-p45",
+      "categoria": "teclados",
+      "marca": "Yamaha",
+      "descripcion": "88 teclas con acción de martillo graduada. Compacto y con sonido de piano de concierto.",
+      "precio": 11999,
+      "precio_anterior": null,
+      "stock": 3,
+      "destacado": true,
+      "nombre_en": "Yamaha P-45 digital piano",
+      "descripcion_en": "88 keys with graded hammer action. Compact, with a concert-grand piano sound."
+    },
+    {
+      "nombre": "Batería electrónica Alesis Nitro",
+      "slug": "alesis-nitro",
+      "categoria": "bateria-percusion",
+      "marca": "Alesis",
+      "descripcion": "Kit de ocho piezas con módulo de 40 sonidos. Se toca con audífonos, sin molestar a los vecinos.",
+      "precio": 9999,
+      "precio_anterior": 10999,
+      "stock": 3,
+      "destacado": true,
+      "nombre_en": "Alesis Nitro electronic drum kit",
+      "descripcion_en": "Eight-piece kit with a 40-sound module. Play with headphones without bothering the neighbors."
+    },
+    {
+      "nombre": "Cajón flamenco Meinl",
+      "slug": "cajon-meinl",
+      "categoria": "bateria-percusion",
+      "marca": "Meinl",
+      "descripcion": "Cajón de abedul con cuerdas internas. Suena bien solo o para acompañar una guitarra.",
+      "precio": 2199,
+      "precio_anterior": null,
+      "stock": 9,
+      "destacado": false,
+      "nombre_en": "Meinl flamenco cajón",
+      "descripcion_en": "Birch cajón with internal snares. Sounds great on its own or accompanying a guitar."
+    },
+    {
+      "nombre": "Audífonos de estudio Audio-Technica ATH-M40x",
+      "slug": "ath-m40x",
+      "categoria": "audio",
+      "marca": "Audio-Technica",
+      "descripcion": "Audífonos cerrados con sonido fiel para grabar, mezclar y escuchar música.",
+      "precio": 2399,
+      "precio_anterior": 2699,
+      "stock": 12,
+      "destacado": true,
+      "nombre_en": "Audio-Technica ATH-M40x studio headphones",
+      "descripcion_en": "Closed-back headphones with accurate sound for recording, mixing and listening to music.",
+      "imagen": "AUDIFONOS-PROFESIONALES-DE-ESTUDIO-AUDIO-TECHNICA-ATH-M40X-Duosonic-Med.webp"
+    },
+    {
+      "nombre": "Bocina monitor JBL 305P MkII",
+      "slug": "jbl-305p",
+      "categoria": "audio",
+      "marca": "JBL",
+      "descripcion": "Monitor de estudio activo de 5 pulgadas. Respuesta clara para producir en casa.",
+      "precio": 3499,
+      "precio_anterior": null,
+      "stock": 6,
+      "destacado": false,
+      "nombre_en": "JBL 305P MkII studio monitor",
+      "descripcion_en": "5-inch active studio monitor. Clear response for producing at home."
+    },
+    {
+      "nombre": "Vinilo: Kind of Blue, Miles Davis",
+      "slug": "vinilo-kind-of-blue",
+      "categoria": "vinilos",
+      "marca": "Columbia",
+      "descripcion": "Clásico del jazz en LP de 180 gramos. Prensado nuevo.",
+      "precio": 899,
+      "precio_anterior": null,
+      "stock": 15,
+      "destacado": false,
+      "nombre_en": "Vinyl: Kind of Blue, Miles Davis",
+      "descripcion_en": "Jazz classic on 180-gram LP. Brand-new pressing."
+    },
+    {
+      "nombre": "Vinilo: Abbey Road, The Beatles",
+      "slug": "vinilo-abbey-road",
+      "categoria": "vinilos",
+      "marca": "Apple Records",
+      "descripcion": "Edición en vinilo del álbum de 1969. Incluye funda con impresión original.",
+      "precio": 1099,
+      "precio_anterior": 1249,
+      "stock": 7,
+      "destacado": true,
+      "nombre_en": "Vinyl: Abbey Road, The Beatles",
+      "descripcion_en": "Vinyl edition of the 1969 album. Includes the sleeve with its original artwork.",
+      "imagen": "D_Q_NP_2X_753662-MLA69715636603_052023-E.webp"
+    },
+    {
+      "nombre": "Tornamesa Audio-Technica AT-LP60X",
+      "slug": "at-lp60x",
+      "categoria": "vinilos",
+      "marca": "Audio-Technica",
+      "descripcion": "Tornamesa automática de dos velocidades con preamplificador integrado.",
+      "precio": 3199,
+      "precio_anterior": 3499,
+      "stock": 5,
+      "destacado": false,
+      "nombre_en": "Audio-Technica AT-LP60X turntable",
+      "descripcion_en": "Fully automatic two-speed turntable with built-in preamp."
+    },
+    {
+      "nombre": "Afinador de clip Snark",
+      "slug": "afinador-snark",
+      "categoria": "accesorios",
+      "marca": "Snark",
+      "descripcion": "Afinador cromático que se sujeta al clavijero. Pantalla a color y lectura rápida.",
+      "precio": 259,
+      "precio_anterior": 299,
+      "stock": 30,
+      "destacado": false,
+      "nombre_en": "Snark clip-on tuner",
+      "descripcion_en": "Chromatic tuner that clips onto the headstock. Color display and fast readings."
+    },
+    {
+      "nombre": "Cuerdas Elixir para guitarra acústica",
+      "slug": "cuerdas-elixir",
+      "categoria": "accesorios",
+      "marca": "Elixir",
+      "descripcion": "Juego de cuerdas con recubrimiento que dura más y conserva el brillo.",
+      "precio": 379,
+      "precio_anterior": null,
+      "stock": 25,
+      "destacado": false,
+      "nombre_en": "Elixir acoustic guitar strings",
+      "descripcion_en": "Coated string set that lasts longer and keeps its brightness.",
+      "imagen": "D_Q_NP_2X_704854-MLU72566139632_112023-V.webp"
+    },
+    {
+      "nombre": "Correa de cuero para guitarra",
+      "slug": "correa-cuero",
+      "categoria": "accesorios",
+      "marca": "Levy's",
+      "descripcion": "Correa ajustable de cuero con puntas reforzadas.",
+      "precio": 429,
+      "precio_anterior": null,
+      "stock": 14,
+      "destacado": false,
+      "nombre_en": "Leather guitar strap",
+      "descripcion_en": "Adjustable leather strap with reinforced ends."
+    }
+  ],
+  "servicios": [
+    {
+      "nombre": "Ajuste de guitarra (setup)",
+      "descripcion": "Altura de cuerdas, curvatura del mástil, entonación y limpieza. Queda cómoda de tocar.",
+      "precio": 450,
+      "duracion_min": 60,
+      "nombre_en": "Guitar setup",
+      "descripcion_en": "String height, neck relief, intonation and cleaning. Makes it comfortable to play."
+    },
+    {
+      "nombre": "Cambio de cuerdas",
+      "descripcion": "Cambiamos las cuerdas, afinamos y revisamos el estado del clavijero.",
+      "precio": 150,
+      "duracion_min": 30,
+      "nombre_en": "String change",
+      "descripcion_en": "We change the strings, tune up and check the condition of the headstock."
+    },
+    {
+      "nombre": "Afinación y revisión",
+      "descripcion": "Afinación completa y revisión rápida de guitarras, bajos y ukeleles.",
+      "precio": 100,
+      "duracion_min": 30,
+      "nombre_en": "Tuning and check-up",
+      "descripcion_en": "Full tuning and quick check of guitars, basses and ukuleles."
+    },
+    {
+      "nombre": "Mantenimiento de teclado",
+      "descripcion": "Limpieza de teclas, revisión de conexiones y prueba de sonido.",
+      "precio": 350,
+      "duracion_min": 45,
+      "nombre_en": "Keyboard maintenance",
+      "descripcion_en": "Key cleaning, connection check and sound test."
+    },
+    {
+      "nombre": "Asesoría para elegir instrumento",
+      "descripcion": "Probamos instrumentos contigo y te ayudamos a elegir según tu nivel y presupuesto.",
+      "precio": 0,
+      "duracion_min": 30,
+      "nombre_en": "Instrument buying advice",
+      "descripcion_en": "We try instruments with you and help you choose based on your level and budget."
+    }
+  ],
+  "noticias": [
+    {
+      "titulo": "Abrimos nuestro taller de ajuste de instrumentos",
+      "slug": "abrimos-taller-ajuste",
+      "fecha": "2026-09-15",
+      "resumen": "Ya puedes agendar una cita para ajustar, afinar y darle mantenimiento a tu guitarra o teclado.",
+      "contenido": "A partir de este mes contamos con un taller dentro de la tienda para dejar tu instrumento listo para tocar.\n\nOfrecemos ajuste completo de guitarras, cambio de cuerdas, afinación y mantenimiento de teclados. Puedes agendar tu cita desde la sección Servicios y citas, eligiendo el día y la hora que mejor te acomode.\n\nAtendemos de lunes a sábado, de 10:00 a 18:00.",
+      "titulo_en": "We opened our instrument setup workshop",
+      "resumen_en": "You can now book an appointment to set up, tune and service your guitar or keyboard.",
+      "contenido_en": "Starting this month we have a workshop inside the store to get your instrument ready to play.\n\nWe offer full guitar setups, string changes, tuning and keyboard maintenance. You can book your appointment from the Services and appointments section, choosing the day and time that suit you best.\n\nWe are open Monday to Saturday, from 10:00 to 18:00."
+    },
+    {
+      "titulo": "Nuevos vinilos de jazz y rock ya disponibles",
+      "slug": "nuevos-vinilos-jazz-rock",
+      "fecha": "2026-09-22",
+      "resumen": "Llegaron álbumes clásicos en vinilo de 180 gramos, junto con una tornamesa para empezar tu colección.",
+      "contenido": "Sumamos a la tienda una selección de álbumes clásicos de jazz y rock en vinilo nuevo.\n\nSi apenas quieres empezar, también tenemos una tornamesa automática con preamplificador integrado, lista para conectarse a tus bocinas.\n\nPasa a la tienda o revisa el catálogo para ver todo lo disponible.",
+      "titulo_en": "New jazz and rock vinyl records now available",
+      "resumen_en": "Classic albums on 180-gram vinyl have arrived, along with a turntable to start your collection.",
+      "contenido_en": "We added a selection of classic jazz and rock albums on brand-new vinyl to the store.\n\nIf you are just getting started, we also have a fully automatic turntable with a built-in preamp, ready to connect to your speakers.\n\nDrop by the store or check the catalog to see everything that is available."
+    },
+    {
+      "titulo": "Cinco consejos para cuidar las cuerdas de tu guitarra",
+      "slug": "consejos-cuidar-cuerdas",
+      "fecha": "2026-09-25",
+      "resumen": "Limpiarlas después de tocar y guardarlas bien puede alargar su vida y mantener su brillo.",
+      "contenido": "Unos hábitos sencillos hacen que tus cuerdas duren más:\n\n1. Límpialas con un paño seco después de tocar.\n2. Lávate las manos antes de tocar.\n3. Guarda la guitarra en su funda, lejos de la humedad.\n4. Afina con calma para no forzar las cuerdas nuevas.\n5. Cámbialas cuando pierdan el brillo o cueste mantener la afinación.\n\nSi no te animas a cambiarlas tú, lo hacemos en el taller.",
+      "titulo_en": "Five tips to take care of your guitar strings",
+      "resumen_en": "Wiping them after playing and storing them well can extend their life and keep their shine.",
+      "contenido_en": "A few simple habits make your strings last longer:\n\n1. Wipe them with a dry cloth after playing.\n2. Wash your hands before playing.\n3. Keep the guitar in its case, away from humidity.\n4. Tune patiently so you do not strain new strings.\n5. Change them when they lose their shine or are hard to keep in tune.\n\nIf you do not feel like changing them yourself, we do it in the workshop."
+    },
+    {
+      "titulo": "Cómo elegir tu primer teclado",
+      "slug": "como-elegir-primer-teclado",
+      "fecha": "2026-09-28",
+      "resumen": "Teclas, sensibilidad y espacio en casa: lo básico que conviene revisar antes de comprar.",
+      "contenido": "Antes de comprar tu primer teclado conviene pensar en tres cosas.\n\nPrimero, el número de teclas: 61 son suficientes para empezar, y 88 te sirven si quieres aprender piano de verdad.\n\nSegundo, la sensibilidad: un teclado con teclas que responden a qué tan fuerte las presionas se siente más parecido a un piano.\n\nTercero, el espacio y el presupuesto. Si tienes dudas, agenda una asesoría gratuita y lo probamos juntos.",
+      "titulo_en": "How to choose your first keyboard",
+      "resumen_en": "Keys, touch sensitivity and space at home: the basics worth checking before you buy.",
+      "contenido_en": "Before buying your first keyboard, it is worth thinking about three things.\n\nFirst, the number of keys: 61 are enough to start, and 88 are useful if you want to really learn piano.\n\nSecond, touch sensitivity: a keyboard whose keys respond to how hard you press feels closer to a piano.\n\nThird, space and budget. If you have doubts, book a free advice session and we will try them together."
+    }
+  ]
+}
